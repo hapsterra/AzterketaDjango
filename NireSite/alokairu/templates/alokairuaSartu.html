@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kotxeak</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+<td>ID</td>
+<td>Matrikula</td>
+<td>Marka</td>
+<td>Modeloa</td>
+<td>Urtea</td>
+</tr>
+    </thead>
+    <tbody>
+{% for x in nireKotxeak %}
+<tr>
+<td>{{ x.id }}</td>
+<td>{{ x.matrikula }}</td>
+<td>{{ x.marka }}</td>
+<td>{{ x.modeloa }}</td>
+<td>{{ x.urtea }}</td>
+
+</tr>
+{% endfor %}
+    </tbody>
+</table>
+<h1>Pertsonak</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+<td>ID</td>
+<td>DNI</td>
+<td>Izena</td>
+<td>Abizena</td>
+<td>Jaiotze Data</td>
+
+</tr>
+    </thead>
+    <tbody>
+{% for x in nirePertsonak %}
+<tr>
+<td>{{ x.id }}</td>
+<td>{{ x.dni }}</td>
+<td>{{ x.izena }}</td>
+<td>{{ x.abizena }}</td>
+<td>{{ x.jaiotzeData }}</td>
+
+</tr>
+{% endfor %}
+    </tbody>
+</table>
+<b><h2>Alokairua sartzerakoan kontuan izan existitzen duela!</h2></b>
+<h1>Add member</h1>
+
+<form action="addrecordAlokairua/" method="post">
+{% csrf_token %}
+Pertsonaren DNI-a:<br>
+<input name="dniPertsona">
+<br><br>
+    Matrikula:<br>
+<input name="matrikula">
+<br><br>
+Alokairu data:<br>
+<input name="alokairuData">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

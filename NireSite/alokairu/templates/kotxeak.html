@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        td{
+            padding: 10px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Kotxeak</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+<td>ID</td>
+<td>Matrikula</td>
+<td>Marka</td>
+<td>Modeloa</td>
+<td>Urtea</td>
+</tr>
+    </thead>
+    <tbody>
+{% for x in nireKotxeak %}
+<tr>
+<td>{{ x.id }}</td>
+<td>{{ x.matrikula }}</td>
+<td>{{ x.marka }}</td>
+<td>{{ x.modeloa }}</td>
+<td>{{ x.urtea }}</td>
+        <td><a href="deleteK/{{ x.id }}"><b>EZABATU</b></a></td>
+
+</tr>
+{% endfor %}
+    </tbody>
+</table>
+        <a href="kotxeakSartu/">Kotxe berria sartu</a> <br>
+        <a href="../"><b>Itzuli</b></a>
+
+
+</body>
+</html>

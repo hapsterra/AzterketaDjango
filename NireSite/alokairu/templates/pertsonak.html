@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        td{
+            padding: 10px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pertsonak</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+<td>ID</td>
+<td>DNI</td>
+<td>Izena</td>
+<td>Abizena</td>
+<td>Jaiotze Data</td>
+
+</tr>
+    </thead>
+    <tbody>
+{% for x in nirePertsonak %}
+<tr>
+<td>{{ x.id }}</td>
+<td>{{ x.dni }}</td>
+<td>{{ x.izena }}</td>
+<td>{{ x.abizena }}</td>
+<td>{{ x.jaiotzeData }}</td>
+    <td><a href="delete/{{ x.id }}"><b>EZABATU</b></a></td>
+
+</tr>
+{% endfor %}
+    </tbody>
+</table>
+<a href="pertsonaSartu/">Pertsona berria sartu</a><br>
+        <a href="../"><b>Itzuli</b></a>
+
+</body>
+</html>
